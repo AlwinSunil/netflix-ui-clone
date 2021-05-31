@@ -1,0 +1,23 @@
+.makeStyles-root-1 {
+    width: 50%;
+}
+
+.alert-content {
+    color: var(--text);
+    font-weight: 700;
+    text-decoration: underline;
+}
+
+@media screen and (max-width:500px) {
+    .makeStyles-root-1 {
+        left: 0 !important;
+        width: 100%;
+    }
+}
+
+
+@media screen and (max-width:700px) {
+    .makeStyles-root-1 {
+        width: 100%;
+    }
+}

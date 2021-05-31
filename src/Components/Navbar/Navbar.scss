@@ -1,0 +1,55 @@
+.navbar {
+    position: sticky;
+    z-index: 10;
+    top: 0;
+    display: flex;
+    flex-direction: row;
+    background-color: var(--background);
+    padding: 0rem 5vw;
+}
+
+.navbar-scrolled {
+    position: sticky;
+    z-index: 10;
+    top: 0;
+    display: flex;
+    flex-direction: row;
+    background-color: var(--background);
+    padding: .25rem 5vw;
+}
+
+.noti-btn-container {
+    width: 3rem;
+    height: 3rem;
+    margin: auto 0px !important;
+    margin-left: auto !important;
+}
+
+.noti-btn-container:hover {
+    background-color: rgba(30, 30, 30, 1) !important;
+}
+
+.noti-btn {
+    color: var(--text);
+}
+
+.creator {
+    width: 3rem;
+    height: 3rem;
+    padding: 0.25rem;
+    margin: auto 0px;
+    border-radius: 0.25rem;
+}
+
+.logo {
+    width: 7rem;
+    height: min-content;
+    margin: auto 0px;
+}
+
+.logoMobile {
+    height: 3.25rem;
+    padding: 0.25rem 0px;
+    width: auto;
+    margin: auto 0px;
+}
