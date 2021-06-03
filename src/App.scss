@@ -1,28 +1,11 @@
 .app {
     width: 100vw;
     overflow-x: hidden;
-    overflow-y: auto;
+    overflow-y: scroll;
 }
 
 .banner {
     width: 100vw;
     height: 100vh;
     overflow: hidden;
-}
-
-.home-content {
-    z-index: 10;
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    padding-top: 1rem;
-    margin-top: -13vh;
-    background-image: linear-gradient(0deg, #181818, rgba(17, 17, 17, 0.65) 85%, rgba(17, 17, 17, 0));
-}
-
-@media screen and (max-width:700px) {
-    .home-content {
-        margin-top: 0px;
-        padding-bottom: 1rem;
-    }
 }

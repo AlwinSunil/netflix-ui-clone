@@ -8,7 +8,7 @@ import NotificationsIcon from "@material-ui/icons/Notifications";
 import "./Navbar.scss";
 
 function Navbar() {
-  const [mobile, setMobile] = useState(true);
+  const [mobile, setMobile] = useState(false);
 
   useEffect(() => {
     if (window.innerWidth > 700) {

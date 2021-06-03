@@ -1,5 +1,5 @@
-import Slider from './Slider'
-import Item from './Item'
+import Slider from "./Slider";
+import Item from "./Item";
 
 Slider.Item = Item;
 

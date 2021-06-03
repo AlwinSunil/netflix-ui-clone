@@ -1,8 +1,8 @@
-import React, { useEffect } from 'react';
+import React, { useEffect } from "react";
 import Snackbar from "@material-ui/core/Snackbar";
 import MuiAlert from "@material-ui/lab/Alert";
 import { makeStyles } from "@material-ui/core/styles";
-import './Warning.scss';
+import "./Warning.scss";
 
 function Alert(props) {
   return <MuiAlert elevation={6} variant="filled" {...props} />;
@@ -40,7 +40,7 @@ function Warning() {
         autoHideDuration={5000}
         onClose={handleClose}
       >
-        <Alert onClose={handleClose} severity="info">
+        <Alert onClose={handleClose} severity="info" elevation={1}>
           All data is from&nbsp;
           <a
             className="alert-content"

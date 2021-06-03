@@ -1,62 +1,54 @@
 import React, { useState, useEffect } from "react";
-import { API_KEY } from "../../constants/constants";
+import axios from "../../axios";
+import { trendingURL, discoverURL, genAction, genComedy } from "../../urls";
 import LoadingAnimation from "../../Components/LoadingAnimation/LoadingAnimation";
-import DesktopSlider from "../../Components/DesktopSlider";
-import MoblieSilder from "../../Components/MobileSlider/MoblieSilder";
 import Header from "../../Components/Header/Header";
 import Navbar from "../../Components/Navbar/Navbar";
-import axios from "axios";
+import Slider from "../../Components/Slider/Slider";
 import "./Home.scss";
 
 function Home() {
   const [loading, setLoading] = useState(true);
-  const [mobile, setMobile] = useState(true);
-  const [program, setProgram] = useState([]);
-  const [trendingOne, setTrendingOne] = useState([]);
+  const [trending, setTrending] = useState();
+  const [discover, setDiscover] = useState();
+  const [action, setAction] = useState();
+  const [comedy, setComedy] = useState();
+  const [trendingOne, setTrendingOne] = useState();
 
   useEffect(() => {
-    if (window.innerWidth > 700) {
-      setMobile(null);
-    }
-    axios.get(`trending/all/day?api_key=${API_KEY}`).then((response) => {
-      console.log(response.data)
-      // setProgram(response.data.results);
-      // setTrendingOne([response.data.results[1]]);
+    axios.get(`${trendingURL}`).then((response) => {
+      setTrending(response.data.results);
+      setTrendingOne([response.data.results[0]]);
+      console.log(response.data.results);
     });
-    setLoading(false);
+    axios.get(`${discoverURL}`).then((response) => {
+      setDiscover(response.data.results);
+    });
+    axios.get(`${genAction}`).then((response) => {
+      setAction(response.data.results);
+    });
+    axios.get(`${genComedy}`).then((response) => {
+      setComedy(response.data.results);
+    });
+    setTimeout(() => {
+      setLoading(false);
+    }, 100);
   }, []);
 
-
   return (
-    <div className="home">
-      {loading ? <LoadingAnimation /> : (
-        <div>
+    <div className="home__conatiner">
+      {loading ? (
+        <LoadingAnimation />
+      ) : (
+        <div className="home">
           <Navbar />
-          <Header data={trendingOne} />
-
-          {mobile ? (
-            <div className="home-content">
-              <MoblieSilder />
-              <MoblieSilder />
-            </div>
-          ) : (
-            <div className="home-content">
-              <DesktopSlider>
-                {program.map((movie) => (
-                  <DesktopSlider.Item movie={movie} key={movie.id}>
-                    item1
-                  </DesktopSlider.Item>
-                ))}
-              </DesktopSlider>
-              <DesktopSlider>
-                {program.map((movie) => (
-                  <DesktopSlider.Item movie={movie} key={movie.id}>
-                    item1
-                  </DesktopSlider.Item>
-                ))}
-              </DesktopSlider>
-            </div>
-          )}
+          {trendingOne ? <Header data={trendingOne} /> : null}
+          <div className="slider__holder">
+            <Slider data={trending} type="Trending" />
+            <Slider data={discover} type="Discover" />
+            <Slider data={action} type="Action" />
+            <Slider data={comedy} type="Comedy" />
+          </div>
         </div>
       )}
     </div>

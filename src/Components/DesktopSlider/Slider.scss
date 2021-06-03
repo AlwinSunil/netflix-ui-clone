@@ -1,13 +1,19 @@
-
 .slider {
   display: flex;
   position: relative;
+  flex-direction: column;
+  padding: 1.5rem 0px 2.5rem 0px;
+
+  &__title {
+    padding: 0px 3.5rem 0.5rem 3.5rem;
+    z-index: 10;
+  }
 
   &__container {
     display: flex;
     padding: 0 55px;
     transition: transform 300ms ease 100ms;
-    z-index: 3;
+    z-index: 12;
     width: 100%;
   }
 
@@ -23,7 +29,7 @@
     transform: translateX(-25%);
   }
 
-  &:not(&--open) .item:hover ~ .item {
+  &:not(&--open) .item:hover~.item {
     transform: translateX(25%);
   }
 }
