@@ -7,7 +7,7 @@
   border: 0;
   outline: 0;
   padding: 0;
-  margin: 4rem 0 3rem 0;
+  margin: 4rem 0 2.25rem 0;
   z-index: 15;
 
   span {
@@ -32,4 +32,12 @@
       transform: rotateZ(90deg);
     }
   }
+}
+
+.slide-button:hover {
+  background-color: rgba(256, 256, 256, 0.9);
+}
+
+.slide-button:hover span {
+  color: var(--primary-color) !important;
 }

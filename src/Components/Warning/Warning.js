@@ -33,7 +33,7 @@ function Warning() {
     setOpen(false);
   };
   return (
-    <div className={classes.root}>
+    <div>
       <Snackbar
         className={classes.root}
         open={open}

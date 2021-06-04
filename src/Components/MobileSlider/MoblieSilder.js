@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import "./MoblieSilder.scss";
 
 function ShowsContainer(props) {
@@ -15,13 +16,15 @@ function ShowsContainer(props) {
       {program ? (
         <div className="shows-row">
           {program.map((item) => (
-            <div key={item.id} className="shows-link">
-              <img
-                className="show-img"
-                src={`https://image.tmdb.org/t/p/w400/${item.poster_path}`}
-                alt=""
-              ></img>
-            </div>
+            <Link to={`/${item.id}`}>
+              <div key={item.id} className="shows-link">
+                <img
+                  className="show-img"
+                  src={`https://image.tmdb.org/t/p/w400/${item.poster_path}`}
+                  alt=""
+                ></img>
+              </div>
+            </Link>
           ))}
         </div>
       ) : null}

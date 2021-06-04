@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import logo from "../../assets/icons/logo-desk.png";
 import logoMobile from "../../assets/icons/logo-mob.png";
 import creator from "../../assets/img/profile.png";
@@ -18,11 +19,13 @@ function Navbar() {
 
   return (
     <div className="navbar">
-      <img
-        className={mobile ? "logoMobile" : "logo"}
-        alt="logo-netflix"
-        src={mobile ? `${logoMobile}` : `${logo}`}
-      ></img>
+      <Link to="/" className="nav__link">
+        <img
+          className={mobile ? "logoMobile" : "logo"}
+          alt="logo-netflix"
+          src={mobile ? `${logoMobile}` : `${logo}`}
+        ></img>
+      </Link>
       <IconButton className="noti-btn-container">
         <NotificationsIcon className="noti-btn" />
       </IconButton>

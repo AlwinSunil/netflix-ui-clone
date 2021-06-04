@@ -1,11 +1,15 @@
 .navbar {
     position: sticky;
-    z-index: 10;
+    z-index: 20;
     top: 0;
     display: flex;
     flex-direction: row;
     background-color: var(--background);
     padding: 0rem 5vw;
+}
+
+.nav__link {
+    display: flex;
 }
 
 .navbar-scrolled {
@@ -43,7 +47,7 @@
 
 .logo {
     width: 7rem;
-    height: min-content;
+    height: auto;
     margin: auto 0px;
 }
 

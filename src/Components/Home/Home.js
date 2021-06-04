@@ -33,6 +33,7 @@ function Home() {
     setTimeout(() => {
       setLoading(false);
     }, 100);
+    window.scroll(0, 0);
   }, []);
 
   return (
