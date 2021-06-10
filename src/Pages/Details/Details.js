@@ -41,8 +41,8 @@ function MobileDetails() {
     <div>
       <div>
         {content.map((item) => (
-          <div className="details">
-            <div key={item.id} className="header">
+          <div className="details" key={item.id}>
+            <div className="header">
               <div className="content__background">
                 <div className="content__background__shadow" />
                 <div

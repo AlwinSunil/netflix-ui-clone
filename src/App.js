@@ -12,20 +12,22 @@ function App() {
   const [banner, setBanner] = useState(true);
 
   return (
-    <div className={banner ? "banner" : "app"}>
-      {banner ? (
-        <Disclaimer value={banner} onChange={() => setBanner(null)} />
-      ) : (
-        <Switch>
-          <Route path="/" exact>
+    <div className="app">
+      <Switch>
+        <Route path="/" exact>
+          {banner ? (
+            <div className={banner ? "banner" : "app"}>
+              <Disclaimer value={banner} onChange={() => setBanner(null)} />
+            </div>
+          ) : (
             <Home />
-          </Route>
-          <Route path="/:id" exact>
-            <Navbar />
-            <Details />
-          </Route>
-        </Switch>
-      )}
+          )}
+        </Route>
+        <Route path="/:id" exact>
+          <Navbar />
+          <Details />
+        </Route>
+      </Switch>
       <Warning />
       <Footer />
     </div>

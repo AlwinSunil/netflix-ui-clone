@@ -9,6 +9,7 @@ import "./Home.scss";
 
 function Home() {
   const [loading, setLoading] = useState(true);
+  const [data, setData] = useState();
   const [trending, setTrending] = useState();
   const [discover, setDiscover] = useState();
   const [action, setAction] = useState();
@@ -30,11 +31,13 @@ function Home() {
     axios.get(`${genComedy}`).then((response) => {
       setComedy(response.data.results);
     });
-    setTimeout(() => {
-      setLoading(false);
-    }, 100);
-    window.scroll(0, 0);
-  }, []);
+    setData(true);
+    if (data) {
+      setTimeout(() => {
+        setLoading(false);
+      }, 100);
+    }
+  }, [data]);
 
   return (
     <div className="home__conatiner">

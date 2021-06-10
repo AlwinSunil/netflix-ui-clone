@@ -11,6 +11,7 @@ function Header({ data }) {
   const [trendingGenres, setTrendingGenres] = useState([]);
 
   const id = data[0].id;
+  console.log(id);
 
   useEffect(() => {
     axios
@@ -18,7 +19,7 @@ function Header({ data }) {
       .then((response) => {
         setTrendingDetails([response.data]);
         setTrendingGenres(response.data.genres);
-        console.log(response.data);
+        console.log('trend one :'+response.data);
       });
   }, [id]);
 

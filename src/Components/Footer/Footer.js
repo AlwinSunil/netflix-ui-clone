@@ -5,7 +5,7 @@ function Footer() {
   return (
     <div className="footer">
       <p className="watermark">
-        This website is created with <span>React JS ⚛️</span> and using&nbsp;
+        This website is built with <span>React JS ⚛️</span> using&nbsp;
         <a
           href="https://themoviedb.org"
           target="_blank"
