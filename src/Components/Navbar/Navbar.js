@@ -9,23 +9,25 @@ import NotificationsIcon from "@material-ui/icons/Notifications";
 import "./Navbar.scss";
 
 function Navbar() {
-  const [mobile, setMobile] = useState(false);
+  const [mobile, setMobile] = useState();
 
   useEffect(() => {
-    if (window.innerWidth > 700) {
-      setMobile(null);
+    if (window.innerWidth < 700) {
+      setMobile(true);
     }
-  }, []);
+  }, [mobile]);
 
   return (
     <div className="navbar">
-      <Link to="/" className="nav__link">
-        <img
-          className={mobile ? "logoMobile" : "logo"}
-          alt="logo-netflix"
-          src={mobile ? `${logoMobile}` : `${logo}`}
-        ></img>
-      </Link>
+      <IconButton className="nav-logo">
+        <Link to="/" className="nav__link">
+          <img
+            className={mobile ? "logoMobile" : "logo"}
+            alt="logo-netflix"
+            src={mobile ? `${logoMobile}` : `${logo}`}
+          ></img>
+        </Link>
+      </IconButton>
       <IconButton className="noti-btn-container">
         <NotificationsIcon className="noti-btn" />
       </IconButton>

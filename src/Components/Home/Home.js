@@ -8,7 +8,7 @@ import Slider from "../../Components/Slider/Slider";
 import "./Home.scss";
 
 function Home() {
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState();
   const [data, setData] = useState();
   const [trending, setTrending] = useState();
   const [discover, setDiscover] = useState();
@@ -19,8 +19,9 @@ function Home() {
   useEffect(() => {
     axios.get(`${trendingURL}`).then((response) => {
       setTrending(response.data.results);
-      setTrendingOne([response.data.results[0]]);
+      setTrendingOne([response.data.results[1]]);
       console.log(response.data.results);
+      setData(true);
     });
     axios.get(`${discoverURL}`).then((response) => {
       setDiscover(response.data.results);
@@ -31,7 +32,6 @@ function Home() {
     axios.get(`${genComedy}`).then((response) => {
       setComedy(response.data.results);
     });
-    setData(true);
     if (data) {
       setTimeout(() => {
         setLoading(false);

@@ -68,6 +68,11 @@ function MobileDetails() {
                     </div>
                   </div>
                   <p className="overview">{item.overview}</p>
+                  <div className="tag__others">
+                    <p className="tag">{item.release_date.substring(0, 4)}</p>
+                    <p className="tag">{item.runtime} M</p>
+                    <p className="tag language">{item.original_language}</p>
+                  </div>
                   <div className="action-btn">
                     <Button>
                       <PlayCircleFilledWhiteIcon className="action-icon" />

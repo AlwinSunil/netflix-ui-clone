@@ -19,7 +19,7 @@ function Header({ data }) {
       .then((response) => {
         setTrendingDetails([response.data]);
         setTrendingGenres(response.data.genres);
-        console.log('trend one :'+response.data);
+        console.log("trend one :" + response.data);
       });
   }, [id]);
 

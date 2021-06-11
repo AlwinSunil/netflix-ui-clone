@@ -1,12 +1,15 @@
 .slider__holder {
-    margin-top: -10vh;
-    background-image: linear-gradient(180deg, black, rgba(17, 17, 17, 0.5) 5%, var(--black-grey));
-    padding-bottom: 1rem;
+    margin-top: -9vh;
+    background-image: linear-gradient(180deg, var(--background) 1%, var(--black-grey));
+    padding-bottom: 3rem;
 }
 
 @media screen and (max-width:700px) {
     .slider__holder {
-        margin-top: 1rem;
-        background-image: linear-gradient(180deg, black, rgba(17, 17, 17, 0.5) 1%, var(--black-grey));
+        margin-top: 0px;
+        padding-top: 1.5rem;
+        padding-bottom: 2rem;
+        background-color: var(--black-grey);
+        background-image: none;
     }
 }
