@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import Button from "@material-ui/core/Button";
 import { Link } from "react-router-dom";
 import "./MoblieSilder.scss";
 
@@ -17,6 +18,7 @@ function ShowsContainer(props) {
         <div className="shows-row">
           {program.map((item) => (
             <Link to={`/${item.id}`}>
+            <Button>
               <div key={item.id} className="shows-link">
                 <img
                   className="show-img"
@@ -24,6 +26,7 @@ function ShowsContainer(props) {
                   alt=""
                 ></img>
               </div>
+              </Button>
             </Link>
           ))}
         </div>

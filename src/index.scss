@@ -8,6 +8,11 @@
   --grey: #757575;
 }
 
+html {
+  scroll-behavior: smooth;
+  transition: scroll-behavior 0.25s ease-in-out;
+}
+
 body {
   margin: 0;
   position: relative;
@@ -36,7 +41,6 @@ body {
 *:focus {
   outline: 0px;
 }
-
 
 h1,
 h2,

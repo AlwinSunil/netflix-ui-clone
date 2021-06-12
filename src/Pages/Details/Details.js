@@ -99,7 +99,7 @@ function MobileDetails() {
                 </div>
               </div>
             </div>
-            <div className="full__description">
+            <div className="show__description">
               <div className="tag__others">
                 <p className="tag">{item.release_date.substring(0, 4)}</p>
                 <p className="tag">{item.runtime} M</p>
