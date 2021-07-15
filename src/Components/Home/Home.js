@@ -39,22 +39,22 @@ function Home() {
     }
   }, [data]);
 
+  if (loading) {
+    <LoadingAnimation />;
+  }
+
   return (
     <div className="home__conatiner">
-      {loading ? (
-        <LoadingAnimation />
-      ) : (
-        <div className="home">
-          <Navbar />
-          {trendingOne ? <Header data={trendingOne} /> : null}
-          <div className="slider__holder">
-            <Slider data={trending} type="Trending" />
-            <Slider data={discover} type="Discover" />
-            <Slider data={action} type="Action" />
-            <Slider data={comedy} type="Comedy" />
-          </div>
+      <div className="home">
+        <Navbar />
+        {trendingOne ? <Header data={trendingOne} /> : null}
+        <div className="slider__holder">
+          <Slider data={trending} type="Trending" />
+          <Slider data={discover} type="Discover" />
+          <Slider data={action} type="Action" />
+          <Slider data={comedy} type="Comedy" />
         </div>
-      )}
+      </div>
     </div>
   );
 }

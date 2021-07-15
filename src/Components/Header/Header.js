@@ -10,8 +10,8 @@ function Header({ data }) {
   const [trendingDetails, setTrendingDetails] = useState([]);
   const [trendingGenres, setTrendingGenres] = useState([]);
 
+  console.log(data);
   const id = data[0].id;
-  console.log(id);
 
   useEffect(() => {
     axios

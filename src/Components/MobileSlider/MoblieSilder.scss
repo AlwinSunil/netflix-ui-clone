@@ -69,6 +69,12 @@
         0 0px 80px rgba(0, 0, 0, 0.12);
 }
 
+.mob__slider {
+    padding: 0px !important;
+    margin: 0px !important;
+}
+
+
 @media screen and(max-width: 700px) {
     .shows-container {
         padding: 0rem 3vw;
